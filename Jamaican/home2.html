@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Home Page</title>
+	<link rel="stylesheet" href="homeCSS.css" type="text/css">
+</head>
+<body>
+	<div class="pageContainer">
+		<div>
+
+			<div class="hero">
+				<div>
+					<div class="nav">
+						<div>
+							<button class="register">Sign Up</button>
+							<button>Login</button>
+						</div>
+					</div>
+					<div class="title">
+						<h1>The Debt LineUp</h1>
+					</div>
+					<div class="mainHeading">
+						<h2>The road to a stress free financial situation.</h2>
+					</div>
+					<div class="mainSignUp">
+						<button class="register">Get Started Today.</button>
+					</div>
+				</div>
+			</div>
+
+			<div class="what panel">
+				<div class="heading">
+					<h3>What is The Debt LineUp?</h3>
+				</div>
+				<div>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto quis porro fugiat possimus, vero eaque non provident inventore nobis veritatis adipisci impedit quas molestiae dolor obcaecati vel quibusdam reprehenderit sapiente!</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="lightbox-tint">
+		<div class="lightbox signup">
+			<div>
+				<h3>The Debt LineUp</h3>
+			</div>
+			<div>
+				<form action="/" method="post">
+					<label> Email:
+						<input type="text">
+					</label>
+					<label> Confirm: 
+						<input type="text">
+					</label>
+					<label> Password:
+						<input type="text">
+					</label>
+					<label> Confirm:
+						<input type="text">
+					</label>
+					<div>
+						<button>Create</button>
+						<a href="">Cancel</a>
+					</div>
+				</form>
+			</div>
+		</div>
+		<div class="lightbox login">
+			<div>
+				<h3>The Debt LineUp</h3>
+			</div>
+			<div>
+				<form action="/" method="post">
+					<label> Email:
+						<input type="text">
+					</label>
+					<label> Password:
+						<input type="text">
+					</label>
+					<div>
+						<div><button>Login</button></div>
+						<a href="">Reset Password</a>
+					</div>
+				</form>
+			</div>
+		</div>
+		<div class="lightbox reset">
+			<div>
+				<h3>The Debt LineUp</h3>
+			</div>
+			<div>
+				<form action="" method="post">
+					<label>Enter your email to receive a password reset.
+						<input type="email" name="email">
+					</label>
+					<div>
+						<button>Send</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+	<script>
+
+		$(function() {
+
+			$('.register').on('click', function(e){
+				e.preventDefault();
+
+				$('.signup').addClass('display');
+			});
+		});
+		
+
+	</script>
+
+</body>
+</html>

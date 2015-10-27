@@ -1,0 +1,55 @@
+
+ORDER OF PAYOFF(logic):
+1.) Anything over 20%
+2.) 15-20% if balance is below $3000
+3.) if payment is greater than 5% of balance
+4.) by balance
+if(accountInterest > 20%)
+
+SITE FEATURES:
+1.) Tell you what to pay
+2.) Payoff charts, show dates
+3.) Keep them motivated
+
+NEEDS:
+1.) Easy to use
+2.) Quick to sign up
+3.) Creative reminders and encouragement
+
+HOMEPAGE:
+- Paneled site with details on who we are and why
+- Link to sign up or go to account (a transition lightbox to middle of page)
+
+SIGNUP PROCESS:
+- Small screen pages with light colored background.
+	1.) Name, email, username, password
+	2.) Add accounts, click to add new account
+		- separate page for each new account
+	3.) Budget page for all expenses
+	4.) Review page to confirm and suggest any possible ones people forget
+	5.) Success page then take to user dashboard
+
+USER DASHBOARD:
+-Payoff tables
+-Payment dates and amounts
+-Edit settings
+-Edit accounts
+-Monthly budget
+
+
+FUTURE IDEAS:
+- API to accounts
+- Mobile app integration
+
+DATABASE:
+- Users
+- Accounts
+- userAccounts
+-
+
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
