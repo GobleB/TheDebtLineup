@@ -4,6 +4,7 @@
 	<meta charset="UTF-8">
 	<title>The LineUp - Dashboard</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+	<link href='https://fonts.googleapis.com/css?family=Arvo:400,400italic,700' rel='stylesheet' type='text/css'>
 	@section('links')
 	@show
 </head>
@@ -75,7 +76,7 @@
 						<a href="/schedule">
 							<div><i class="fa fa-calendar"></i></div>
 						</a>
-						<a href="/logout">
+						<a href="/auth/logout">
 							<div><i class="fa fa-eject"></i></div>
 						</a>
 					</div>

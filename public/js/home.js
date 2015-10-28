@@ -7,8 +7,6 @@ $(function(){
 
 	// Registration lightbox items:
 
-	
-
 	$('.register').on('click', function(e){
 		e.preventDefault();
 		$('.signup').addClass('display');
@@ -20,7 +18,6 @@ $(function(){
 		$('.login').addClass('display');
 	});
 
-
 	// Registration lightbox items:
 	$('#reset').on('click', function(e){
 		e.preventDefault();
@@ -28,12 +25,7 @@ $(function(){
 		$('.reset').addClass('display');
 	});
 
-	/* DO AJAX CALL FOR PASSWORD RESET, PRINT MESSAGE AND THEN DELAYED CLOSE*/
-
-	$('.reset button').on('click', function(e){
-		e.preventDefault();
-		// $.get()
-	});
+	// Closes all lightboxes:
 
 
 });

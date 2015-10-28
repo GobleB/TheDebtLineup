@@ -44,6 +44,10 @@ table {
 	border-spacing: 0;
 }
 
+body {
+	font-family: 'Arvo', serif;
+}
+
 /* End Reset */
 
 
@@ -236,7 +240,7 @@ table {
 /* SPECIFIC TO ACCOUNTS PAGE */
 
 .titles td {
-	font-size: 16pt;
+	font-size: 14pt;
 }
 
 tr {

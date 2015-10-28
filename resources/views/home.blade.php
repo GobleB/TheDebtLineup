@@ -8,19 +8,20 @@
 	@parent
 
 		<div>
-			<div class="nav">
-				<div>
-					<button class="register">Sign Up</button>
-					<button class="signIn">Login</button>
+			<div>
+				<div class="nav">
+					<div class="title">
+						<h1>Debt<span>LineUp</span></h1>
+					</div>
+					<div>
+						<button class="register">Sign Up</button>
+						<button class="signIn">Login</button>
+					</div>	
 				</div>
 			</div>
-			<div class="title">
-				<h1>The Debt LineUp</h1>
-			</div>
+
 			<div class="mainHeading">
 				<h2>The road to a stress free financial situation.</h2>
-			</div>
-			<div class="mainSignUp">
 				<button class="register">Get Started Today.</button>
 			</div>
 		</div>
@@ -31,10 +32,10 @@
 	@parent
 
 		<div class="heading">
-			<h3>What is The Debt LineUp?</h3>
+			<h3>What Is The Debt LineUp</h3>
 		</div>
 		<div>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto quis porro fugiat possimus, vero eaque non provident inventore nobis veritatis adipisci impedit quas molestiae dolor obcaecati vel quibusdam reprehenderit sapiente!</p>
+			<p>The Debt LineUp is a revolutionary finance app designed to help individuals get out of debt.  By providing the user a precise structure to follow, we make it easy to stick to the program. But most of all, we're making the world a better place.</p>
 		</div>
 
 @endsection
@@ -46,19 +47,19 @@
 			<h3>The Debt LineUp</h3>
 		</div>
 		<div>
-			<form action="/signUp" method="post">
-				<input type="hidden" name="_token" value="{{ csrf_token() }}">
+			<form action="/auth/register" method="post">
+				{!! csrf_field() !!}
 				<label> Email:
-					<input type="email" name="email" class="email">
+					<input type="email" name="email" value="{{ old('email') }}" class="email">
 				</label>
 				<label> Confirm: 
-					<input type="email" name="email2" class="email2">
+					<input type="email" name="email_confirmation" class="email2">
 				</label>
 				<label> Password:
 					<input type="password" name="password" class="password" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).{4,15}$">
 				</label>
 				<label> Confirm:
-					<input type="password" name="password2" class="password2" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).{4,15}$">
+					<input type="password" name="password_confirmation" class="password2" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).{4,15}$">
 				</label>
 				<div>
 					<button>Create</button>
@@ -76,14 +77,19 @@
 			<h3>The Debt LineUp</h3>
 		</div>
 		<div>
-			<form action="/login" method="post">
-				<input type="hidden" name="_token" value="{{ csrf_token() }}">
-				<label> Email:
-					<input type="text">
-				</label>
-				<label> Password:
-					<input type="text">
-				</label>
+			<form action="/auth/login" method="post">
+				{!! csrf_field() !!}
+    			<div>
+       				Email
+        			<input type="email" name="email" value="{{ old('email') }}">
+    			</div>
+    			<div>
+        			Password
+        			<input type="password" name="password" id="password">
+    			</div>
+				<div>
+        			<input type="checkbox" name="remember"> Remember Me
+  				</div>	
 				<div>
 					<button>Login</button>
 					<a href="/" class="cancel">Cancel</a>
@@ -104,10 +110,10 @@
 			<h3>The Debt LineUp</h3>
 		</div>
 		<div>
-			<form action="/" method="post">
-				<input type="hidden" name="_token" value="{{ csrf_token() }}">
+			<form method="post" action="/password/email">
+    			{!! csrf_field() !!}
 				<label>Enter your email to receive a password reset.
-					<input type="email" name="email">
+					<input type="email" name="email" value="{{ old('email') }}">
 				</label>
 				<div>
 					<button>Send</button>

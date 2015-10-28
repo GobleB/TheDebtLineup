@@ -4,8 +4,10 @@
 	<meta charset="UTF-8">
 	<title>The LineUp - @yield('title')</title>
 	<link rel="stylesheet" href="css/home.css" type="text/css">
+	<link href='https://fonts.googleapis.com/css?family=Arvo:100,400,400italic,700' rel='stylesheet' type='text/css'>
 </head>
 <body>
+	<div class="background-image"></div>
 	<div class="pageContainer">
 		<div>
 			<div class="hero">
