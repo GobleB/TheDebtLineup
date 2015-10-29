@@ -1,5 +1,8 @@
 <?php
 
+use Illuminate\Http\Request;
+use Illuminate\Routing\Controller;
+
 Route::get('/', function () {
     return view('/home');
 });
@@ -9,11 +12,12 @@ Route::post('/signUp', 'MainController@newUser');
 Route::get('/snapshot', function() {
 	return view('snapshot');
 });
+
 Route::get('/schedule', function() {
 	return view('schedule');
 });
 Route::get('/accounts', function() {
-	return view('accounts');
+	return view('accounts',['id'=>Auth::user()->id]);
 });
 Route::get('/budget', function() {
 	return view('budget');

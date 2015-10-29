@@ -253,13 +253,13 @@ form>div>div {
 }
 
 form>div>div:first-child {
-	width: 340px;
-	font-size: 18pt;
+	width: 360px;
+	font-size: 16pt;
 }
 
 .save {
 	text-align: center;
-	margin-left: 115px;
+	margin-left: 155px;
 }
 
 .save button {
@@ -267,6 +267,6 @@ form>div>div:first-child {
 }
 
 #total {
-	font-size: 18pt;
+	font-size: 16pt;
 	text-decoration: underline;
 }

@@ -6,7 +6,6 @@
 	
 	<link rel="stylesheet" href="/css/accounts.css" type="text/css">
 
-
 @endsection
 
 @section ('content')

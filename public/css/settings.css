@@ -240,7 +240,7 @@ body {
 /* SPECIFIC TO SETTINGS PAGE */
 
 form {
-	font-size: 16pt;
+	font-size: 14pt;
 }
 .mainContainer {
 	display: flex;
@@ -267,12 +267,12 @@ form {
 
 .optional {
 	position: relative;
-	font-size: 12pt;
+	font-size: 10pt;
 }
 
 .optional>div {
 	position: absolute;
-	margin: 0 auto;
+	margin-left: -18px;
 	padding: 5px;
 	border: 1px solid black;
 	width: 340px;

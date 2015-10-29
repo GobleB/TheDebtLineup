@@ -1,3 +1,4 @@
+
 @extends('layouts.dashboard')
 
 @section('pageTitle', 'Account Snapshot')
@@ -11,12 +12,12 @@
 @section('content')
 	<div class="subContent">
 		<div>
-			<div>Total Debt as of Today:</div>
-			<div> {insert Total Debt}</div>
+			<div>Total Debt :</div>
+			<div> {$XXX,XXX.XX}</div>
 		</div>
 		<div>
 			<div>Estimated Payoff Date :</div>
-			<div> {Insert Payoff Date}</div>
+			<div> {XX-XXXX}</div>
 		</div>
 	</div>
 	<div class="graphContainer">

@@ -11,7 +11,7 @@
 			<div>
 				<div class="nav">
 					<div class="title">
-						<h1>Debt<span>LineUp</span></h1>
+						<h1><span>Debt</span>LineUp</h1>
 					</div>
 					<div>
 						<button class="register">Sign Up</button>
