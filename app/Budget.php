@@ -4,18 +4,18 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Account extends Model
+class Budget extends Model
 
 {
 
-    protected $table = 'accounts';
+    protected $table = 'budget';
 
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
-    protected $fillable = ['first_name', 'last_name', 'email', 'password', 'street', 'city', 'state', 'zip'];
+    protected $fillable = ['user_id', 'expenses', 'savings', 'invest', 'income', 'cash'];
 
     /**
      * The attributes excluded from the model's JSON form.

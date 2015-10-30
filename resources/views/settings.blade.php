@@ -10,7 +10,8 @@
 
 @section ('content')
 
-	<form action="/" method="post">
+	<form action="/settings" method="post">
+		{!! csrf_field() !!}
 		<div class="mainContainer">
 			<div>
 				<div class="field">
@@ -18,7 +19,7 @@
 						First Name :
 					</div>
 					<div>
-						<input type="text">
+						<input type="text" name="first_name" value="{{$user->first_name}}">
 					</div>
 				</div>
 				<div class="field">
@@ -26,7 +27,7 @@
 						Email :
 					</div>
 					<div>
-						<input type="email">
+						<input type="email" name="email" value="{{$user->email}}">
 					</div>
 				</div>
 			</div>
@@ -36,7 +37,7 @@
 						Last Name :
 					</div>
 					<div>
-						<input type="text">
+						<input type="text" name="last_name" value="{{$user->last_name}}">
 					</div>
 				</div>
 				<div class="field">
@@ -44,7 +45,7 @@
 						Password :
 					</div>
 					<div>
-						<input type="password">
+						<input type="password" name="password" value="{{$user->password}}" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).{4,15}$">
 					</div>
 				</div>
 			</div>
@@ -58,7 +59,7 @@
 					Street Address :
 				</div>
 				<div>
-					<input type="text">
+					<input type="text" name="street" value="{{$user->street}}">
 				</div>
 			</div>
 		</div>
@@ -69,7 +70,7 @@
 						City :
 					</div>
 					<div>
-						<input type="text">
+						<input type="text" name="city" value="{{$user->city}}">
 					</div>
 				</div>
 				<div class="field">
@@ -77,7 +78,7 @@
 						State :
 					</div>
 					<div>
-						<input type="text">
+						<input type="text" name="state" value="{{$user->state}}">
 					</div>
 				</div>
 			</div>
@@ -87,19 +88,7 @@
 						Zip Code :
 					</div>
 					<div>
-						<input type="text">
-					</div>
-				</div>
-				<div class="field">
-					<div>Age Group :</div>
-					<div>
-						<select name="age">
-							<option value="1">18-21 years</option>
-							<option value="2">21-25 years</option>
-							<option value="3">26-30 years</option>
-							<option value="4">31-40 years</option>
-							<option value="5">40+ years</option>
-						</select>
+						<input type="text" name="zip" value="{{$user->zip}}">
 					</div>
 				</div>
 			</div>
@@ -110,4 +99,20 @@
 			</div>
 		</div>
 	</form>
+@endsection
+
+@section('scripts')
+
+
+<script>
+$(function(){
+$.ajaxSetup({
+   	headers: {
+ 	     'X-CSRF-TOKEN': '{!! csrf_token() !!}'
+       }
+   });
+});
+</script>
+<script src="/js/settings.js"></script>
+
 @endsection

@@ -13,7 +13,7 @@
 	<div class="subContent">
 		<div>
 			<div>Total Debt :</div>
-			<div> {$XXX,XXX.XX}</div>
+			<div>{$XXX,XXX.XX}</div>
 		</div>
 		<div>
 			<div>Estimated Payoff Date :</div>

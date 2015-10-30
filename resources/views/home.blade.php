@@ -1,35 +1,42 @@
 @extends('layouts.home')
 
-@section('title', 'Home')
+@section('page_title', 'Home')
 
 @endsection
 
-@section('hero')
-	@parent
+@section('title')
 
-		<div>
+	<div>
+		<div class="title">
+			<h1>debt<span>lineup</span></h1>
+		</div>
+		<div class="nav">
+			<button class="register">Sign Up</button>
+			<button class="signIn">Login</button>
+		</div>	
+	</div>
+
+@endsection
+
+@section('heading')
+
+		<div class="mainHeading">
 			<div>
-				<div class="nav">
-					<div class="title">
-						<h1><span>Debt</span>LineUp</h1>
-					</div>
-					<div>
-						<button class="register">Sign Up</button>
-						<button class="signIn">Login</button>
-					</div>	
-				</div>
-			</div>
-
-			<div class="mainHeading">
 				<h2>The road to a stress free financial situation.</h2>
-				<button class="register">Get Started Today.</button>
 			</div>
 		</div>
 
 @endsection
 
+@section('signUp')
+
+	<div>
+		<button class="register">SIGN UP</button>
+	</div>
+
+@endsection
+
 @section('about')
-	@parent
 
 		<div class="heading">
 			<h3>What Is The Debt LineUp</h3>
@@ -41,7 +48,6 @@
 @endsection
 
 @section('lightbox signup')
-	@parent
 
 		<div>
 			<h3>The Debt LineUp</h3>
@@ -71,7 +77,6 @@
 @endsection
 
 @section('lightbox login')
-	@parent
 
 		<div>
 			<h3>The Debt LineUp</h3>
@@ -104,7 +109,6 @@
 @endsection
 
 @section('lightbox reset')
-	@parent
 
 		<div>
 			<h3>The Debt LineUp</h3>

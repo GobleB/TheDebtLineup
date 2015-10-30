@@ -7,24 +7,21 @@ Route::get('/', function () {
     return view('/home');
 });
 
-Route::post('/signUp', 'MainController@newUser');
-
-Route::get('/snapshot', function() {
-	return view('snapshot');
-});
+Route::get('/snapshot', ['middleware' => 'auth',
+    'uses' => 'MainController@login']);
 
 Route::get('/schedule', function() {
 	return view('schedule');
 });
 Route::get('/accounts', function() {
-	return view('accounts',['id'=>Auth::user()->id]);
+	return view('accounts');
 });
-Route::get('/budget', function() {
-	return view('budget');
-});
-Route::get('/settings', function() {
-	return view('settings');
-});
+
+Route::get('/budget', 'MainController@getBudget');
+Route::post('/budget', 'MainController@setBudget');
+
+Route::get('/settings', 'MainController@getSettings');
+Route::post('/settings', 'MainController@setSettings');
 
 
 
