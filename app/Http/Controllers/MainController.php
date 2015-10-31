@@ -22,7 +22,8 @@ class MainController extends Controller {
 
     public function getSettings() {
         try {
-            $user = auth()->user();
+            $user = User::get(auth()->user()->id);
+
             return view('/settings', ['user'=>$user]);  
         } catch (PDOException $e) {
             die($e->getMessage());
@@ -40,7 +41,7 @@ class MainController extends Controller {
             $user->city = Request::input('city');
             $user->state = Request::input('state');
             $user->zip = Request::input('zip');
-            $user->save($user);  
+            $user->update($user);  
 
         } catch (PDOException $e) {
             die($e->getMessage());
