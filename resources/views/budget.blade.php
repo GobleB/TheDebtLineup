@@ -10,13 +10,13 @@
 
 @section ('content')
 
-	<form action="">
+	<form action="/" method="post">
 		<div>
 			<div>
 				<div>Monthly Expenses (non-debt) :</div>
 			</div>
 			<div>
-				<input type="number" name="expenses" value="{{$budget->expenses}}">
+				<input type="number" name="expenses" id="expenses" value="{{$budget->expenses}}">
 			</div>
 		</div>
 		<div>
@@ -24,7 +24,7 @@
 				<div>Monthly Savings Contribution :</div>
 			</div>
 			<div>
-				<input type="number" name="savings" value="{{$budget->savings}}">
+				<input type="number" name="savings" id="savings" value="{{$budget->savings}}">
 			</div>
 		</div>
 		<div>
@@ -32,7 +32,7 @@
 				<div>Other Investment Contributions :</div>
 			</div>
 			<div>
-				<input type="number" name="invest" value="{{$budget->invest}}">
+				<input type="number" name="invest" id="invest" value="{{$budget->invest}}">
 			</div>
 		</div>
 		<div>
@@ -40,7 +40,7 @@
 				<div>Monthly Income (post-taxes) :</div>
 			</div>
 			<div>
-				<input type="number" name="income" value="{{$budget->income}}">
+				<input type="number" name="income" id="income" value="{{$budget->income}}">
 			</div>
 		</div>
 		<div class="save">
@@ -61,7 +61,6 @@
 @endsection
 
 @section('scripts')
-
 
 <script>
 $(function(){

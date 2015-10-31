@@ -40,12 +40,12 @@
 						<input type="text" name="last_name" value="{{$user->last_name}}">
 					</div>
 				</div>
-				<div class="field">
+				<div class="field password">
 					<div>
 						Password :
 					</div>
 					<div>
-						<input type="password" name="password" value="{{$user->password}}" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).{4,15}$">
+						<a href="/">Change Password</a>
 					</div>
 				</div>
 			</div>

@@ -13,6 +13,26 @@ class Budget {
     public $income;
     public $cash;
 
+    // private function __construct($user_id, $expenses, $savings, $invest, $income, $cash) {
+    //     $this->user_id = $user_id;
+    //     $this->expenses = $expenses;
+    //     $this->savings = $savings;
+    //     $this->invest = $invest;
+    //     $this->income = $income;
+    //     $this->cash = $cash;
+    // }
+
+    private function insert($x) {
+
+        $sql = "
+            INSERT INTO budget (user_id, expenses, savings, invest, income, cash)
+            VALUES (:user_id, :expenses, :savings, :invest, :income, :cash)
+            ";
+
+        return DB::insert($sql, ["user_id"=>$x->user_id,"expenses"=>$x->expenses,"savings"=>$x->savings,"invest"=>$x->invest,"income"=>$x->income,"cash"=>$x->cash]);
+
+    }
+
     private function update($x) {
         
         $sql = "
@@ -25,23 +45,46 @@ class Budget {
 
     }
 
-    public function save($x) {
-        if (empty($x->user_id)) {
-            $this->insert($x);
+    public function save($budget) {
+
+        $sql = "
+        SELECT * 
+        FROM budget
+        WHERE user_id = :id
+        ";
+
+        $row = DB::selectOne($sql, ["id"=>$budget->user_id]);
+        
+        if (empty($row)) {
+            $this->insert($budget);
         } else {
-            $this->update($x);
+            $this->update($budget);
         }
     }
 
-    public function get($x) {
+    static public function get($user) {
+
+        $budget = new Budget();
 
         $sql = "
-            SELECT * 
-            FROM budget
-            WHERE user_id = :id
-            ";
+                SELECT * 
+                FROM budget
+                WHERE user_id = :id
+                ";
 
-        return DB::select($sql, ["id"=>$x]);
+        $row = DB::selectOne($sql, ["id"=>$user->id]);
+        
+        if (!empty($row)) {            
+
+            $budget->user_id = $row->user_id;
+            $budget->expenses = $row->expenses;
+            $budget->savings = $row->savings;
+            $budget->invest = $row->invest;
+            $budget->income = $row->income;
+            $budget->cash = $row->cash;
+
+        }
+        
+        return $budget;
     }
-
 }

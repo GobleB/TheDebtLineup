@@ -265,6 +265,11 @@ form {
 	width: 120px;
 }
 
+.password a {
+	font-size: 12pt;
+	text-decoration: none;
+}
+
 .optional {
 	position: relative;
 	font-size: 10pt;

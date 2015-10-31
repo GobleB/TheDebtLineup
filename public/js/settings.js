@@ -14,5 +14,8 @@ $(function(){
 	});
 
 
+	$('.password a').on('click', function(e){
+		e.preventDefault();
+	})
 
 });

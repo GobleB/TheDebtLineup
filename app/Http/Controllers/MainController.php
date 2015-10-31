@@ -36,15 +36,6 @@ class MainController extends Controller {
             $user->first_name = Request::input('first_name');
             $user->last_name = Request::input('last_name');
             $user->email = Request::input('email');
-
-            $pInput = Request::input('password');
-            if($pInput > 15) {
-                $user->password = $pInput;
-            } else {
-                $pInput = bcrypt($pInput);
-                $user->password = $pInput;
-            }
-
             $user->street = Request::input('street');
             $user->city = Request::input('city');
             $user->state = Request::input('state');
@@ -59,9 +50,8 @@ class MainController extends Controller {
     public function getBudget() {
         try {
             $user = auth()->user();
-            $budget = new Budget();
-            $budget->get($user->id);
-
+            $budget = Budget::get($user);
+            
             return view('/budget', ["user"=>$user, "budget"=>$budget]);
         } catch (PDOException $e) {
             die($e->getMessage());
@@ -87,7 +77,7 @@ class MainController extends Controller {
             }
 
             $budget->cash = cash($budget);
-
+            print_r($budget);
             $budget->save($budget);  
 
         } catch (PDOException $e) {
