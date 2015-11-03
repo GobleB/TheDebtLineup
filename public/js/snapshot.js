@@ -19,7 +19,10 @@ $(function(){
             text: 'PayDown Over Time'
         },
         xAxis: {
-            categories: categories
+            categories: categories,
+            title: {
+                text: 'Months'
+            }
         },
         yAxis: {
             title: {

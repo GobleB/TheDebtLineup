@@ -24,7 +24,7 @@ class MainController extends Controller {
             $current_balance = $this->getTotalBalance($accounts);
             $total_balance = $this->getTotalBalance($accounts);
             $type_totals = $this->totalsByType($accounts);
-            
+
             while($total_balance > 0){
 
                 $total_balance = 0;
@@ -185,7 +185,7 @@ class MainController extends Controller {
                 $payment = $this->getPayment($account, $remainingBudget);
                 $list_account = new Account();
                 $list_account->name = $account->name;
-                $list_account->min_payment = $payment;
+                $list_account->min_payment = round($payment, 2);
                 array_push($accounts_schedule, $list_account);
             }
              

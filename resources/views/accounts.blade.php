@@ -28,10 +28,10 @@
 				<td class="min_payment">{{$account->min_payment}}</td>
 				<td class="rate">{{$account->rate}}</td>
 				<td>
-					<button class="update">U</button>
+					<button class="update"><i class="fa fa-pencil-square-o"></i></button>
 				</td>
 				<td>
-					<button class="remove">X</button>
+					<button class="remove"><i class="fa fa-trash"></i></button>
 				</td>
 			</tr>
 		@endforeach
@@ -58,7 +58,7 @@
 					<input type="number" id="rate" class="rate" placeholder="ex 12.99" step="any">
 				</td>
 				<td>
-					<button class="save">S</button>
+					<button class="save"><i class="fa fa-floppy-o"></i></button>
 				</td>
 			</tr>		
 	</table>
@@ -86,25 +86,25 @@
 			<td class="min_payment">@{{min_payment}}</td>
 			<td class="rate">@{{rate}}</td>
 			<td>
-				<button class="update">U</button>
+				<button class="update"><i class="fa fa-pencil-square-o"></i></button>
 			</td>
 			<td>
-				<button class="remove">X</button>
+				<button class="remove"><i class="fa fa-trash"></i></button>
 			</td>
 		</tr>
 	</script>
 	<script id="update_account_template" type="text/x-handlebars-template">
-		<tr class="newAccount">
+		<tr class="account_update">
 			<td>
 				<input type="text" id="name" class="name" value="@{{name}}">
 			</td>
 			<td>
-				<select id="type" class="type" value="@{{type}}">
-					<option value="mortgage">Home Loan</option>
-					<option value="card">Credit Card</option>
-					<option value="student">Student Loan</option>
-					<option value="auto">Auto Loan</option>
-					<option value="other">Other</option>
+				<select id="type" class="type">
+					<option id="mortgage" value="mortgage">Home Loan</option>
+					<option id="card" value="card">Credit Card</option>
+					<option id="student" value="student">Student Loan</option>
+					<option id="auto" value="auto">Auto Loan</option>
+					<option id="other" value="other">Other</option>
 				</select>
 			</td>
 			<td>
@@ -117,10 +117,7 @@
 				<input type="number" id="rate" class="rate" value="@{{rate}}" step="any">
 			</td>
 			<td>
-				<button class="save">S</button>
-			</td>
-			<td>
-				<button class="remove">X</button>
+				<button class="save"><i class="fa fa-floppy-o"></i></button>
 			</td>
 		</tr>
 	</script>

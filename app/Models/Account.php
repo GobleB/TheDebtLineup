@@ -29,10 +29,10 @@ class Account {
         $sql = "
             UPDATE accounts
             SET name = :name, type = :type, balance = :balance, rate = :rate, min_payment = :min_payment
-            WHERE user_id = :id and name = :name
+            WHERE user_id = :id and name = :name2
             ";
 
-        return DB::insert($sql, ["name"=>$account->name,"type"=>$account->type,"balance"=>$account->balance,"rate"=>$account->rate, "min_payment"=>$account->min_payment, "id"=>$account->user_id, ]);
+        return DB::insert($sql, ["name"=>$account->name,"name2"=>$account->name,"type"=>$account->type,"balance"=>$account->balance,"rate"=>$account->rate, "min_payment"=>$account->min_payment, "id"=>$account->user_id, ]);
 
     }
 
