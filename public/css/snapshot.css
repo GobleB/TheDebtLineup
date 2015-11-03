@@ -266,6 +266,11 @@ body {
 
 .graphContainer>div {
 	flex: 1;
-	min-height: 300px; /* Jamaican Only */
+	margin: 10px;
+	height: 360px; /* Jamaican Only */
+}
+
+.highcharts-container>svg>text {
+	display: none;
 }
 

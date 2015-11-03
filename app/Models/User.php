@@ -18,26 +18,6 @@ class User {
 
     }
 
-    // private function insert($x) {
-
-    //     $sql = "
-    //         INSERT INTO users (first_name, last_name, email, city, state, zip)
-    //         VALUES (:first_name, :last_name, :email, :city, :state, :zip)
-    //         WHERE id = :id
-    //         ";
-
-    //     return DB::insert($sql, ["user_id"=>$x->user_id,"expenses"=>$x->expenses,"savings"=>$x->savings,"invest"=>$x->invest,"income"=>$x->income,"cash"=>$x->cash]);
-
-    // }
-
-    // public function save($x) {
-    //     if (empty($x->id)) {
-    //         $this->insert($x);
-    //     } else {
-    //         $this->update($x);
-    //     }
-    // }
-
     static public function get($id) {
 
         $user = new User();
@@ -50,8 +30,6 @@ class User {
 
         $row = DB::selectOne($sql, ["id"=>$id]);           
 
-
-        print_r($row);
         $user->id = $row->id;
         $user->first_name = $row->first_name;
         $user->last_name = $row->last_name;

@@ -16,9 +16,9 @@ class CreateAccountsTable extends Migration
             $table->integer('user_id')->unsigned();
             $table->string('name');
             $table->string('type');
-            $table->integer('balance');
-            $table->integer('min_payment');
-            $table->integer('rate');
+            $table->float('balance');
+            $table->float('min_payment');
+            $table->float('rate');
             $table->timestamps();
             $table->foreign('user_id')->references('id')->on('users');
         });

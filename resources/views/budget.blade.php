@@ -11,6 +11,7 @@
 @section ('content')
 
 	<form action="/" method="post">
+		{!! csrf_field() !!}
 		<div>
 			<div>
 				<div>Monthly Expenses (non-debt) :</div>
@@ -62,15 +63,15 @@
 
 @section('scripts')
 
-<script>
-$(function(){
-$.ajaxSetup({
-   	headers: {
- 	     'X-CSRF-TOKEN': '{!! csrf_token() !!}'
-       }
-   });
-});
-</script>
-<script src="/js/budget.js"></script>
+	<script>
+		$(function(){
+		$.ajaxSetup({
+		   	headers: {
+		 	     'X-CSRF-TOKEN': '{!! csrf_token() !!}'
+		       }
+		   });
+		});
+	</script>
+	<script src="/js/budget.js"></script>
 
 @endsection

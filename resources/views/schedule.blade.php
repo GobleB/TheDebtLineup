@@ -9,16 +9,7 @@
 @endsection
 
 @section ('content')
-	
-	<div class="options">
-		<div>
-			<label for="">Snowball</label>
-			<input type="radio" name="schedule" value="snowball">
-			<div> | </div>
-			<label for="">Hybrid</label>
-			<input type="radio" name="schedule" value="hybrid">
-		</div>
-	</div>
+
 	<div class="scheduleContainer">
 		<div>
 			<div class="heading">
@@ -30,7 +21,12 @@
 					<td>Account Name</td>
 					<td>Payment Amount</td>
 				</tr>
-				{{-- INSERT LOOP FOR EACH ACCOUNT --}}
+				@foreach($accounts as $account)
+				<tr>
+					<td>{{$account->name}}</td>
+					<td>{{$account->min_payment}}</td>
+				</tr>
+				@endforeach
 			</table>
 		</div>
 	</div>

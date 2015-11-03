@@ -174,9 +174,9 @@ header>div>div {
 	padding: 10px 20px;
 	margin-bottom: 30px;
 	border-radius: 40px;
+	border: none;
 	background: #4CB1FF;
 	color: rgb(245, 245, 253);
-	border: 0px;
 }
 
 .panel {
@@ -211,18 +211,24 @@ button:hover, .signUp>div button:hover {
 	cursor: pointer;
 }
 
+button:focus {
+	outline: 0;
+}
+
 /* LIGHTBOXES */
 
 .lightbox {
 	height: 280px;
-	width: 400px;
+	width: 300px;
 	position: absolute;
 	left: 50%;
 	top: 50%;
 	display: none;
 	transform: translate(-50%, -50%);
-	border: 2px solid rgb(111, 111, 119);
-	background-color: rgba(245, 245, 253, .9);
+	box-shadow: 0px 0px 10px 0px rgb(111, 111, 119);
+	/*border: 2px solid rgb(111, 111, 119);*/
+	border-radius: 10px;
+	background-color: rgb(245, 245, 253);
 	padding: 20px;
 	z-index: 999;
 	color: #4CB1FF;
@@ -234,23 +240,19 @@ button:hover, .signUp>div button:hover {
 	font-size: 18pt;
 }
 
-.lightbox label {
-	margin: 10px auto;
-	width: 240px;
-	display: block;
-	text-align: right;
-	font-size: 14pt;
-	color: rgb(111, 111, 119);
+.lightbox form {
+
 }
 
 .lightbox form div {
-	margin-top: 20px;
+	margin-top: 10px;
 	text-align: center;
 	display: block;
 }
 
 .lightbox button {
 	font-size: 14pt;
+	margin-top: 10px;
 	margin-bottom: 10px;
 	border-radius: 40px;
 	padding: 5px 10px;
@@ -267,14 +269,6 @@ button:hover, .signUp>div button:hover {
 .lightbox button:hover {
 	color: yellow;
 	cursor: pointer;
-}
-
-.lightbox>div:last-child {
-	margin-right: 20px;
-}
-
-.login form>div:nth-child(2) {
-	padding-left: 31px;
 }
 
 .reset label{

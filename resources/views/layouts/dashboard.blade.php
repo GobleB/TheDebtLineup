@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>The LineUp - Dashboard</title>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="/css/font-awesome.css">
 	<link href='https://fonts.googleapis.com/css?family=Arvo:400,400italic,700' rel='stylesheet' type='text/css'>
 	@section('links')
 	@show
@@ -98,7 +98,7 @@
 			</div>
 		</div>
 	</div>
-	<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+	<script src="/js/jquery-1.11.3.min.js"></script>
 	@section('scripts')
 		@show
 </body>

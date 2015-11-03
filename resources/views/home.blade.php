@@ -22,7 +22,7 @@
 
 		<div class="mainHeading">
 			<div>
-				<h2>The road to a stress free financial situation.</h2>
+				<h2>Your path to a stress free financial situation.</h2>
 			</div>
 		</div>
 
@@ -55,18 +55,18 @@
 		<div>
 			<form action="/auth/register" method="post">
 				{!! csrf_field() !!}
-				<label> Email:
-					<input type="email" name="email" value="{{ old('email') }}" class="email">
-				</label>
-				<label> Confirm: 
-					<input type="email" name="email_confirmation" class="email2">
-				</label>
-				<label> Password:
-					<input type="password" name="password" class="password" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).{4,15}$">
-				</label>
-				<label> Confirm:
-					<input type="password" name="password_confirmation" class="password2" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).{4,15}$">
-				</label>
+				<div>
+					<input type="email" name="email" value="{{ old('email') }}" class="email" placeholder="Email Address">
+				</div>	
+				<div>
+					<input type="email" name="email_confirmation" class="email2" placeholder="Confirm Address">
+				</div>
+				<div>
+					<input type="password" name="password" class="password" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).{4,15}$" placeholder="Enter Password">
+				</div>
+				<div>
+					<input type="password" name="password_confirmation" class="password2" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).{4,15}$" placeholder="Confirm Password">
+				</div>
 				<div>
 					<button>Create</button>
 					<a href="" class="cancel">Cancel</a>
@@ -85,12 +85,10 @@
 			<form action="/auth/login" method="post">
 				{!! csrf_field() !!}
     			<div>
-       				Email
-        			<input type="email" name="email" value="{{ old('email') }}">
+        			<input type="email" name="email" value="{{ old('email') }}" placeholder="Email Address">
     			</div>
     			<div>
-        			Password
-        			<input type="password" name="password" id="password">
+        			<input type="password" name="password" id="password" placeholder="Password">
     			</div>
 				<div>
         			<input type="checkbox" name="remember"> Remember Me

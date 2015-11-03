@@ -20,30 +20,110 @@
 			<td></td>
 			<td></td>
 		</tr>
+		@foreach ($accounts as $account)
+			<tr>
+				<td class="name">{{$account->name}}</td>
+				<td class="type">{{$account->type}}</td>
+				<td class="balance">{{$account->balance}}</td>
+				<td class="min_payment">{{$account->min_payment}}</td>
+				<td class="rate">{{$account->rate}}</td>
+				<td>
+					<button class="update">U</button>
+				</td>
+				<td>
+					<button class="remove">X</button>
+				</td>
+			</tr>
+		@endforeach
+			<tr class="newAccount">
+				<td>
+					<input type="text" id="name" class="name" placeholder="ex. Black Card">
+				</td>
+				<td>
+					<select id="type" class="type">
+						<option value="mortgage">Home Loan</option>
+						<option value="card">Credit Card</option>
+						<option value="student">Student Loan</option>
+						<option value="auto">Auto Loan</option>
+						<option value="other">Other</option>
+					</select>
+				</td>
+				<td>
+					<input type="number" id="balance" class="balance" placeholder="ex 5000.00" step="any">
+				</td>
+				<td>
+					<input type="number" id="min_payment" class="min_payment" placeholder="ex 250.00" step="any">
+				</td>
+				<td>
+					<input type="number" id="rate" class="rate" placeholder="ex 12.99" step="any">
+				</td>
+				<td>
+					<button class="save">S</button>
+				</td>
+			</tr>		
+	</table>
+
+@endsection
+
+@section('scripts')
+
+	<script>
+		$(function(){
+		$.ajaxSetup({
+		   	headers: {
+		 	     'X-CSRF-TOKEN': '{!! csrf_token() !!}'
+		       }
+		   });
+		});
+	</script>	
+	<script src="/js/handlebars-v4.0.4.js"></script>
+	<script src="/js/account.js"></script>
+	<script id="new_account_template" type="text/x-handlebars-template">
 		<tr>
+			<td class="name">@{{name}}</td>
+			<td class="type">@{{type}}</td>
+			<td class="balance">@{{balance}}</td>
+			<td class="min_payment">@{{min_payment}}</td>
+			<td class="rate">@{{rate}}</td>
 			<td>
-				<input type="text" name="name">
+				<button class="update">U</button>
 			</td>
 			<td>
-				<select name="type">
+				<button class="remove">X</button>
+			</td>
+		</tr>
+	</script>
+	<script id="update_account_template" type="text/x-handlebars-template">
+		<tr class="newAccount">
+			<td>
+				<input type="text" id="name" class="name" value="@{{name}}">
+			</td>
+			<td>
+				<select id="type" class="type" value="@{{type}}">
 					<option value="mortgage">Home Loan</option>
-					<option value="credit card">Credit Card</option>
-					<option value="student loan">Student Loan</option>
-					<option value="auto loan">Auto Loan</option>
+					<option value="card">Credit Card</option>
+					<option value="student">Student Loan</option>
+					<option value="auto">Auto Loan</option>
 					<option value="other">Other</option>
 				</select>
 			</td>
 			<td>
-				<input type="number" name="balance">
+				<input type="number" id="balance" class="balance" value="@{{balance}}" step="any">
 			</td>
 			<td>
-				<input type="number" name="payment">
+				<input type="number" id="min_payment" class="min_payment" value="@{{min_payment}}" step="any">
 			</td>
 			<td>
-				<input type="number" name="rate">
+				<input type="number" id="rate" class="rate" value="@{{rate}}" step="any">
 			</td>
-
+			<td>
+				<button class="save">S</button>
+			</td>
+			<td>
+				<button class="remove">X</button>
+			</td>
 		</tr>
-	</table>
+	</script>
+
 
 @endsection

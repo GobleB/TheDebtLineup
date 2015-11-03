@@ -13,21 +13,35 @@
 	<div class="subContent">
 		<div>
 			<div>Total Debt :</div>
-			<div>{$XXX,XXX.XX}</div>
+			<div>${{$current_balance}}</div>
 		</div>
 		<div>
 			<div>Estimated Payoff Date :</div>
-			<div> {XX-XXXX}</div>
+			<div>{{$payoff_date}}</div>
 		</div>
 	</div>
 	<div class="graphContainer">
-		<div>
-			<div>Insert Graph here</div>
-		</div>
-		<div>
-			<div>Insert Statistical Data here</div>
-		</div>
+		<div id="monthly_graph"></div>
+		<div id="types_graph"></div>
 	</div>
-	
+
+@endsection
+
+@section('scripts')
+
+	<script>
+		var type_totals = {!! $type_totals !!};
+		var monthly_balance = {!! $monthly_balance !!};
+
+		$(function(){
+		$.ajaxSetup({
+		   	headers: {
+		 	     'X-CSRF-TOKEN': '{!! csrf_token() !!}'
+		       }
+		   });
+		});
+	</script>
+	<script src="/js/highcharts.js"></script>
+	<script src="/js/snapshot.js"></script>
 
 @endsection
