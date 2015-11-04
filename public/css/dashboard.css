@@ -45,7 +45,12 @@ table {
 }
 
 body {
-	font-family: 'Arvo', serif;
+	font-family: 'Roboto', sans-serif;
+}
+
+a {
+	color:inherit;
+	text-decoration: none;
 }
 
 /* End Reset */
@@ -56,15 +61,13 @@ body {
 /* Start CSS */
 
 .pageContainer {
-	background-color: grey;
+	background-color: rgb(167, 180, 189);
 }
 
 .pageContainer>div {
 	display: flex;
 	width: 960px;
 	margin: 0 auto;
-	padding-top: 10px;
-	padding-bottom: 10px;
 }
 
 
@@ -72,9 +75,8 @@ body {
 
 .sidebar {
 	flex: 1;
-	height: 1200px;
-	background-color: lightblue;
-	text-decoration: bold;
+	background-color: rgb(39, 71, 96);
+	font-weight: bold;
 }
 
 .welcome {
@@ -93,20 +95,23 @@ body {
 .sidebar h1 {
 	font-size: 14pt;
 	text-decoration: bold;
+	color: rgb(81, 123, 156);
 }
 
 .sidebar h2 {
 	font-size: 14pt;
 	text-transform: uppercase;
+	padding-left: 5px;
 }
 
 .sidebar h3 {
 	font-size: 10pt;
 	font-weight: bold;
+	color: rgb(81, 123, 156);
 }
 
 .sidebar>div {
-	border-bottom: 2px solid black;
+	border-bottom: 2px solid rgb(33, 56, 73);
 	padding: 10px 0px;
 }
 
@@ -121,6 +126,7 @@ body {
 
 .sidebar a {
 	text-decoration: none;
+	color: rgb(137, 156, 171);
 }
 
 .sidebar i {
@@ -128,31 +134,44 @@ body {
 	text-align: center;
 }
 
+.sidebar h2:hover {
+	border-left: 4px solid rgb(79, 167, 235);
+}
+
+.header a div:hover{
+	text-shadow: 0px 0px 4px;
+}
 
 /* Head Nav section */
 
 .contentContainer>div:first-child{
 	position: relative;
 	height: 60px;
-	border-bottom: 1px solid black;
+	border-bottom: 1px solid rgb(219, 222, 223);
 }
 
 .header {
 	position: absolute;
 	right: 0px;
 	padding-right: 4px;
+	color: rgb(64, 105, 137);
 }
 
 .header div {
 	height: 20px;
 	font-size: 25px;
-	border-left: 1px solid black;
+	border-left: 1px solid rgb(219, 222, 223);
 	display: inline-block;
 	padding: 20px;
 }
 
-.header a {
+.header>a, .header>a>div, .header>a>div>i {
 	text-decoration: none;
+	color: rgb(64, 105, 137)
+}
+
+.header i {
+	color: rgb(64, 105, 137);
 }
 
 
@@ -160,31 +179,34 @@ body {
 
 .contentContainer {
 	flex: 4;
-	background-color: lightgrey;
 }
 
 .contentContainer h1 {
 	margin: 40px;
-	background-color: royalblue;
 	font-size: 24pt;
-	text-decoration: underline;
 }
 
 /* Removed some on Accounts page*/
 
 .content {
-/*	display: flex;
-	padding-left: 20px;
-	padding-right: 20px;
-	margin-top: 10px;
-	margin-bottom: 10px;*/
 	min-height: 400px;
+	padding: 40px;
+	background-color: rgb(229, 236, 241);
+	min-height: 400px;
+	color: rgb(39, 71, 96);
+}
+
+.motivation {
+	text-align: center;
+	padding-top: 10px;
+	padding-bottom: 60px;
+	color: rgb(81, 123, 156);
 }
 
 .motivation>div {
-	border: 1px solid black;
 	padding: 10px;
-	margin: 10px 80px 10px 80px;
+	margin: 0px 80px 10px 80px;
+	line-height: 150%;
 }
 
 .contentContainer h3 {
@@ -192,43 +214,18 @@ body {
 	text-decoration: underline;
 }
 
-
-/*JAMAICAN COLORS*/
-
-.welcome {
-	background-color: red;
-}
-
-.date {
-	background-color: green;
-}
-
-.mainViews {
-	background-color: pink;
-}
-
-.edits {
-	background-color: yellow;
-}
+/*COLORS*/
 
 .contentContainer {
-	background-color: teal;
-}
-
-.primaryContent {
-	background-color: darkorchid;
-}
-
-.subContent {
-	background-color: tomato;
-}
-
-.subContent div div {
 	background-color: white;
 }
 
+.subContent div div {
+	background-color: rgb(229, 236, 241);
+}
+
 .motivation {
-	background-color: violet
+	background-color: rgba(229, 236, 241, 1);
 }
 
 

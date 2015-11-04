@@ -12,11 +12,11 @@
 @section('content')
 	<div class="subContent">
 		<div>
-			<div>Total Debt :</div>
+			<div>Total Debt -</div>
 			<div>${{$current_balance}}</div>
 		</div>
 		<div>
-			<div>Estimated Payoff Date :</div>
+			<div>Estimated Payoff Date -</div>
 			<div>{{$payoff_date}}</div>
 		</div>
 	</div>

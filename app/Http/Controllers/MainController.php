@@ -54,7 +54,7 @@ class MainController extends Controller {
 
             $months = (count($monthly_balance))-1; //Minus 1 for last empty month
 
-            $payoff_date = \Carbon\Carbon::now()->addMonth($months)->format('m-Y');
+            $payoff_date = \Carbon\Carbon::now()->addMonth($months)->format('m/Y');
 
             $monthly_balance = json_encode($monthly_balance);
             $type_totals = json_encode($type_totals);

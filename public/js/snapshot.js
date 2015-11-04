@@ -13,7 +13,8 @@ $(function(){
 
     $('#monthly_graph').highcharts({
         chart: {
-            type: 'line'
+            type: 'line',
+            backgroundColor: "rgba(229, 236, 241, 1)"
         },
         title: {
             text: 'PayDown Over Time'
@@ -47,7 +48,7 @@ $(function(){
     $('#types_graph').highcharts({
         chart: {
             type: 'column',
-            ignoreHiddenSeries : false
+            backgroundColor: "rgba(229, 236, 241, 1)"
         },
         title: {
             text: 'Totals by Type'

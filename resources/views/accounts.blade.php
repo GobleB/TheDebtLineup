@@ -26,7 +26,7 @@
 				<td class="type">{{$account->type}}</td>
 				<td class="balance">{{$account->balance}}</td>
 				<td class="min_payment">{{$account->min_payment}}</td>
-				<td class="rate">{{$account->rate}}</td>
+				<td class="rate">{{$account->rate}}%</td>
 				<td>
 					<button class="update"><i class="fa fa-pencil-square-o"></i></button>
 				</td>
@@ -84,7 +84,7 @@
 			<td class="type">@{{type}}</td>
 			<td class="balance">@{{balance}}</td>
 			<td class="min_payment">@{{min_payment}}</td>
-			<td class="rate">@{{rate}}</td>
+			<td class="rate">@{{rate}}%</td>
 			<td>
 				<button class="update"><i class="fa fa-pencil-square-o"></i></button>
 			</td>

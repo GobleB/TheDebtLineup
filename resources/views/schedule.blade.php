@@ -17,9 +17,9 @@
 				<h3>Make the below payments on the account due dates</h3>
 			</div>
 			<table>
-				<tr>
-					<td>Account Name</td>
-					<td>Payment Amount</td>
+				<tr class="table_headings">
+					<td><strong>Account Name</strong></td>
+					<td><strong>Payment Amount</strong></td>
 				</tr>
 				@foreach($accounts as $account)
 				<tr>

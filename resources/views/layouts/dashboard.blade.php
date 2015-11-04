@@ -4,7 +4,9 @@
 	<meta charset="UTF-8">
 	<title>The LineUp - Dashboard</title>
 	<link rel="stylesheet" href="/css/font-awesome.css">
-	<link href='https://fonts.googleapis.com/css?family=Arvo:400,400italic,700' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Roboto:400,500,700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="/css/dashboard.css" type="text/css">
 	@section('links')
 	@show
 </head>
@@ -89,10 +91,10 @@
 						@show
 				</div>
 				<div class="motivation">
-					<h3>Keep On, Keepin On</h3>
+					{{-- <h3>Keep On, Keepin On</h3> --}}
 					<div>
-						<div class="quote">"This is a test quote"</div>
-						<div class="author">- John Doe</div>
+						<div class="quote">"The pessimist complains about the wind; the optimist expects it to change; the realist adjusts the sails."</div>
+						<div class="author">- William Arthur Ward</div>
 					</div>
 				</div>
 			</div>
