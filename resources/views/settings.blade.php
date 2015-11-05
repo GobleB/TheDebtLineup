@@ -19,7 +19,7 @@
 						First Name :
 					</div>
 					<div>
-						<input type="text" name="first_name" value="{{$user->first_name}}">
+						<input type="text" name="first_name" value="{{$user->first_name}}" id="name">
 					</div>
 				</div>
 				<div class="field">
@@ -54,12 +54,12 @@
 			<div>OPTIONAL (Used for statistical information only)</div>
 		</div>
 		<div class="streetContainer">
-			<div>
+			<div class="field">
 				<div>
 					Street Address :
 				</div>
 				<div>
-					<input type="text" name="street" value="{{$user->street}}">
+					<input type="text" name="street" value="{{$user->street}}" id="street">
 				</div>
 			</div>
 		</div>
@@ -106,11 +106,11 @@
 
 <script>
 $(function(){
-$.ajaxSetup({
-   	headers: {
- 	     'X-CSRF-TOKEN': '{!! csrf_token() !!}'
-       }
-   });
+	$.ajaxSetup({
+	   	headers: {
+	 	    'X-CSRF-TOKEN': '{!! csrf_token() !!}'
+	    }
+   	});
 });
 </script>
 <script src="/js/settings.js"></script>

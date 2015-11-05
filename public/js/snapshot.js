@@ -1,9 +1,8 @@
 $(function(){
 
-
     var balance = [];
     var categories = [];
-    for(var i=0;i<monthly_balance.length;i++){
+    for(var i=0;i<monthly_balance.length;i++) {
         categories.push(i);
         balance.push(parseFloat(monthly_balance[i].toFixed(2)));
     }
@@ -14,7 +13,10 @@ $(function(){
     $('#monthly_graph').highcharts({
         chart: {
             type: 'line',
-            backgroundColor: "rgba(229, 236, 241, 1)"
+            backgroundColor: "rgba(229, 236, 241, 1)",
+            style: {
+                    'fontSize': '14pt'
+            }
         },
         title: {
             text: 'PayDown Over Time'
@@ -23,7 +25,7 @@ $(function(){
             categories: categories,
             title: {
                 text: 'Months'
-            }
+            },
         },
         yAxis: {
             title: {
@@ -40,7 +42,7 @@ $(function(){
     var keys = Object.keys(type_totals);
 
     var vals = [];
-    for(var i=0; i< keys.length; i++){
+    for(var i=0; i< keys.length; i++) {
         vals[i]= type_totals[keys[i]];
     }
 
@@ -48,7 +50,10 @@ $(function(){
     $('#types_graph').highcharts({
         chart: {
             type: 'column',
-            backgroundColor: "rgba(229, 236, 241, 1)"
+            backgroundColor: "rgba(229, 236, 241, 1)",
+            style: {
+                    'fontSize': '14pt'
+            }
         },
         title: {
             text: 'Totals by Type'
@@ -66,5 +71,4 @@ $(function(){
             data: vals
         }]
     });
-
 });

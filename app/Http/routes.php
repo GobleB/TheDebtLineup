@@ -10,17 +10,17 @@ Route::get('/', function () {
 Route::get('/snapshot', ['middleware' => 'auth',
     'uses' => 'MainController@login']);
 
-Route::get('/schedule', ['middleware' => 'auth', 'uses'=>'MainController@getSchedule']);
+Route::get('/schedule', ['middleware' => 'auth', 'uses'=>'MainController@get_schedule']);
 
-Route::get('/accounts', ['middleware' => 'auth', 'uses'=>'MainController@getAccounts']);
-Route::post('/accounts',['middleware' => 'auth', 'uses'=> 'MainController@setAccount']);
-Route::post('/accounts/delete', ['middleware' => 'auth', 'uses'=> 'MainController@deleteAccount']);
+Route::get('/accounts', ['middleware' => 'auth', 'uses'=>'MainController@get_accounts']);
+Route::post('/accounts',['middleware' => 'auth', 'uses'=> 'MainController@set_account']);
+Route::post('/accounts/delete', ['middleware' => 'auth', 'uses'=> 'MainController@delete_account']);
 
-Route::get('/budget', ['middleware' => 'auth', 'uses' => 'MainController@getBudget']);
-Route::post('/budget', ['middleware' => 'auth', 'uses' => 'MainController@setBudget']);
+Route::get('/budget', ['middleware' => 'auth', 'uses' => 'MainController@get_budget']);
+Route::post('/budget', ['middleware' => 'auth', 'uses' => 'MainController@set_budget']);
 
-Route::get('/settings', ['middleware' => 'auth', 'uses' =>'MainController@getSettings']);
-Route::post('/settings', ['middleware' => 'auth', 'uses' =>'MainController@setSettings']);
+Route::get('/settings', ['middleware' => 'auth', 'uses' =>'MainController@get_settings']);
+Route::post('/settings', ['middleware' => 'auth', 'uses' =>'MainController@set_settings']);
 
 
 

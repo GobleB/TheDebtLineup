@@ -11,7 +11,6 @@ $(function(){
 		var min_payment = parseFloat($(this).parent().siblings().children('#min_payment').val());
 		var rate = parseFloat($(this).parent().siblings().children('#rate').val());
 		var mydata = {"name":name, "type":type, "balance":balance, "min_payment":min_payment, "rate":rate};
-		console.log(mydata);
 		var parent_tr = $(this).parent().parent();
 		$.ajax ({
 			url: '/accounts',
@@ -20,12 +19,11 @@ $(function(){
 			success: function(result) {
 				console.log('account added');
 				var new_tr = template(mydata);
-				if (parent_tr.hasClass('account_update')){
+				if (parent_tr.hasClass('account_update')) {
 					parent_tr.replaceWith(new_tr);
 				} else {
 					$(new_tr).insertBefore(parent_tr);
-				}
-						
+				}	
 			}
 		});
 	});
@@ -34,13 +32,11 @@ $(function(){
 		e.preventDefault();
 		var name = $(this).parent().siblings('.name').text();
 		var mydata = {"name":name};
-		console.log(mydata);
 		$.ajax ({
 			url: '/accounts/delete',
 			type: 'POST',
 			data: mydata,
 			success: function(result) {
-				console.log(mydata);
 				console.log('account deleted');
 			}
 		});
@@ -73,5 +69,4 @@ $(function(){
 			$('#other').prop('selected', 'selected');
 		}
 	});
-
 });

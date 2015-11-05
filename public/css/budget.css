@@ -22,8 +22,9 @@ form>div>div:first-child {
 }
 
 .save button {
-	font-size: 20pt;
+	font-size: 16pt;
 	border-radius: 5px;
+	padding: 0px 10px;
 	background-color: rgb(229, 236, 241);
 	color: rgb(33, 56, 73);
 }

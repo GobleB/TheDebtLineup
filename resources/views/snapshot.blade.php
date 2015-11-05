@@ -34,11 +34,11 @@
 		var monthly_balance = {!! $monthly_balance !!};
 
 		$(function(){
-		$.ajaxSetup({
-		   	headers: {
-		 	     'X-CSRF-TOKEN': '{!! csrf_token() !!}'
-		       }
-		   });
+			$.ajaxSetup({
+			   	headers: {
+			 	    'X-CSRF-TOKEN': '{!! csrf_token() !!}'
+			    }
+		   	});
 		});
 	</script>
 	<script src="/js/highcharts.js"></script>

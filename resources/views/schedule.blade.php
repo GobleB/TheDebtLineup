@@ -22,10 +22,10 @@
 					<td><strong>Payment Amount</strong></td>
 				</tr>
 				@foreach($accounts as $account)
-				<tr>
-					<td>{{$account->name}}</td>
-					<td>{{$account->min_payment}}</td>
-				</tr>
+					<tr>
+						<td>{{$account->name}}</td>
+						<td>{{$account->min_payment}}</td>
+					</tr>
 				@endforeach
 			</table>
 		</div>

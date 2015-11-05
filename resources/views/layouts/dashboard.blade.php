@@ -15,7 +15,7 @@
 		<div>
 			<div class="sidebar">
 				<div class="welcome">
-					<div><img src="/images/JacksonOnCouch.jpg"></div>
+					<div><img src="/images/{{$user->image_path}}"></div>
 					<div><h1><strong>{{$user->first_name}}</strong></h1></div>
 				</div>
 				<div class="mainViews">

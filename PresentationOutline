@@ -1,0 +1,39 @@
+Story:	
+	Opening:
+		- App to pay off debt, lots of finance apps out there but none specifically to paying off debt.
+		- So lets get at it.  To not bore you with the signup process, I have two volunteers from an
+			office I use to work at willing to show off their results.
+	BULK:
+		- Here is our first volunteer Michaelss Snapshot and as you can see, he's going to be in debt 
+			for a while.
+		- He notices his total balance, his estimated payoff date, he can use the graph to see
+			his balance after a certain amount of months and can see what types hold the balance.
+		- Now that Michael sees how long he can pay everything off, he needs a little help in knowing
+			what to pay.  Luckily he has this handy monthly schedule updated for him every month
+		- You know what though, in looking over the schedule, Michael forgot to add his Sandals
+			VISA account so he goes to add the account (ADD ACCOUNT 6000, 150, 18.99)
+		- Show updated totals and schedule.
+		- Now Michael is a little less stress knowing if he sticks to the updated schedule, he
+			won't be in debt forever.
+		- Now, lets take a quick look at Jim's account, who's a little more financially responsible.
+		- Notice how he'll be out of debt sooner and has less fluxuasion in his graph due to his good
+			credit and low interest rates.
+		- Jim notices that he made a mistake when entering his name earlier (show name change)
+		- Lastly, Jim would like to see what effects paying more monthly would have, rather than putting
+			it to savings (lower savings and up payable).
+		- Show the changes.
+		- So as you can see, different people with different financial situations can both benefit
+			from the Debt LineUp.
+		- Thank you.
+
+	Closing:
+		- In closing, you can see that The Debt LineUp is not just for those who need financial help, 
+			but for anyone that could use the information provided.
+
+Items to Fix for Presentation:
+1.) More flux in the graph. (increase balance of high debt) - DONE
+2.) Fix left border on sidebar when hover.  - DONE
+3.) Fix Save buttons.  Too big. - DONE
+4.) Bigger text on dashboard. - KINDA DONE
+5.) User images. - DONE
+6.) Clean up code. - DONE

@@ -21,38 +21,31 @@ class MainController extends Controller {
             $monthly_balance = [];
             $curMonth = 0;
 
-            $current_balance = $this->getTotalBalance($accounts);
-            $total_balance = $this->getTotalBalance($accounts);
-            $type_totals = $this->totalsByType($accounts);
+            $current_balance = $this->get_total_balance($accounts);
+            $total_balance = $this->get_total_balance($accounts);
+            $type_totals = $this->totals_by_type($accounts);
 
-            while($total_balance > 0){
+            while($total_balance > 0) {
 
                 $total_balance = 0;
 
-                $remainingBudget = $budget->cash - $this->getTotalPayments($accounts);
+                $remaining_budget = $budget->cash - $this->get_total_payments($accounts);
 
-                // Make Payments for each Account...
-                // Calcualte new total Balance...
-                foreach($accounts as $account){
+                foreach($accounts as $account) {
 
-                    $interest = $this->calcInterest($account);
+                    $interest = $this->calc_interest($account);
 
-                    // What is the payment for this Account?
-                    $payment = $this->getPayment($account, $remainingBudget);
-                    
-                    // Calculate the new balance
+                    $payment = $this->get_payment($account, $remaining_budget);
+
                     $account->balance = $account->balance + $interest - $payment;
-
-
                     $total_balance = $total_balance + $account->balance;
-
                 }
 
                 $monthly_balance[$curMonth] = $total_balance;
                 $curMonth++;
             }
 
-            $months = (count($monthly_balance))-1; //Minus 1 for last empty month
+            $months = (count($monthly_balance))-1;
 
             $payoff_date = \Carbon\Carbon::now()->addMonth($months)->format('m/Y');
 
@@ -66,32 +59,29 @@ class MainController extends Controller {
 		}
     }
 
-    private function getTotalBalance($accounts){
+    private function get_total_balance($accounts){
 
-        $totalBalance = 0;
-        foreach($accounts as $account){
-            $totalBalance = $totalBalance + $account->balance;
+        $total_balance = 0;
+        foreach($accounts as $account) {
+            $total_balance = $total_balance + $account->balance;
         }
 
-        return $totalBalance;
+        return $total_balance;
 
     }
 
-    private function getPayment($account, &$remaining){
+    private function get_payment($account, &$remaining){
 
-        $interest = $this->calcInterest($account);
+        $interest = $this->calc_interest($account);
 
-        if(($account->balance + $interest) < $account->min_payment){
+        if(($account->balance + $interest) < $account->min_payment) {
 
             $payment = $account->balance + $interest;
            
         } else {
-            if($remaining > 0){
-                // Tricky
+            if($remaining > 0) {
 
-                // How much remaining do we need to use
-
-                if(($account->balance + $interest) >= ($account->min_payment + $remaining)){
+                if(($account->balance + $interest) >= ($account->min_payment + $remaining)) {
                     $payment = $account->min_payment + $remaining;
                     $remaining = 0;
                 }
@@ -112,9 +102,9 @@ class MainController extends Controller {
 
     }
 
-    private function calcInterest($account){
+    private function calc_interest($account) {
 
-        if($account->type == "card"){
+        if($account->type == "card") {
             $period = 365;
         } else {
             $period = 12;
@@ -131,17 +121,17 @@ class MainController extends Controller {
 
     
 
-    private function getTotalPayments($accounts){
-        $totalPayments = 0;
+    private function get_total_payments($accounts) {
+        $total_payments = 0;
 
-        foreach($accounts as $account){
-            $totalPayments = $totalPayments + $account->min_payment;
+        foreach($accounts as $account) {
+            $total_payments = $total_payments + $account->min_payment;
         }
 
-        return $totalPayments;
+        return $total_payments;
     }
 
-    private function totalsByType($accounts) {
+    private function totals_by_type($accounts) {
 
         $card = 0;
         $mortgage = 0; 
@@ -168,21 +158,19 @@ class MainController extends Controller {
         return $type_Balances;
     }
 
-    public function getSchedule() {
+    public function get_schedule() {
         try {
             $user = auth()->user();
             $budget = Budget::get($user);
             $accounts = Account::get_desc($user);
-            $remainingBudget = $budget->cash - $this->getTotalPayments($accounts);
-            // Make Payments for each Account...
-            // Calcualte new total Balance...
+            $remaining_budget = $budget->cash - $this->get_total_payments($accounts);
+
             $accounts_schedule = [];
-            foreach($accounts as $account){
+            foreach($accounts as $account) {
 
-                $interest = $this->calcInterest($account);
+                $interest = $this->calc_interest($account);
 
-                // What is the payment for this Account?
-                $payment = $this->getPayment($account, $remainingBudget);
+                $payment = $this->get_payment($account, $remaining_budget);
                 $list_account = new Account();
                 $list_account->name = $account->name;
                 $list_account->min_payment = round($payment, 2);
@@ -195,9 +183,9 @@ class MainController extends Controller {
         }
     }
 
-    public function getSettings() {
+    public function get_settings() {
         try {
-            $user = User::get(auth()->user()->id);
+            $user = auth()->user();
 
             return view('/settings', ['user'=>$user]);  
         } catch (PDOException $e) {
@@ -205,7 +193,7 @@ class MainController extends Controller {
         }
     }
 
-    public function setSettings() {
+    public function set_settings() {
         try {
             $user = new User();
             $user->id = auth()->user()->id;
@@ -223,7 +211,7 @@ class MainController extends Controller {
         }
     }
 
-    public function getBudget() {
+    public function get_budget() {
         try {
             $user = auth()->user();
             $budget = Budget::get($user);
@@ -234,7 +222,7 @@ class MainController extends Controller {
         }
     }
 
-    public function setBudget() {
+    public function set_budget() {
         try {
             $budget = new Budget();
             $budget->user_id = auth()->user()->id;
@@ -253,7 +241,6 @@ class MainController extends Controller {
             }
 
             $budget->cash = cash($budget);
-            print_r($budget);
             $budget->save($budget);  
 
         } catch (PDOException $e) {
@@ -261,7 +248,7 @@ class MainController extends Controller {
         }
     }
 
-    public function getAccounts() {
+    public function get_accounts() {
         try {
             $user = auth()->user();
             $accounts = Account::get($user);
@@ -273,7 +260,7 @@ class MainController extends Controller {
 
     }
 
-    public function setAccount() {
+    public function set_account() {
         try {
             $account = new Account();
             $account->user_id = auth()->user()->id;
@@ -289,7 +276,7 @@ class MainController extends Controller {
         }
     }
 
-    public function deleteAccount() {
+    public function delete_account() {
         try {
             $account = new Account();
             $account->user_id = auth()->user()->id;

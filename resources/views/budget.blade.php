@@ -65,11 +65,11 @@
 
 	<script>
 		$(function(){
-		$.ajaxSetup({
-		   	headers: {
-		 	     'X-CSRF-TOKEN': '{!! csrf_token() !!}'
-		       }
-		   });
+			$.ajaxSetup({
+			   	headers: {
+			 	    'X-CSRF-TOKEN': '{!! csrf_token() !!}'
+			    }
+			});
 		});
 	</script>
 	<script src="/js/budget.js"></script>

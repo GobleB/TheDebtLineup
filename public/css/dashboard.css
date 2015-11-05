@@ -102,6 +102,7 @@ a {
 	font-size: 14pt;
 	text-transform: uppercase;
 	padding-left: 5px;
+	margin-left: 4px;
 }
 
 .sidebar h3 {
@@ -135,6 +136,7 @@ a {
 }
 
 .sidebar h2:hover {
+	margin-left: 0px;
 	border-left: 4px solid rgb(79, 167, 235);
 }
 
@@ -186,10 +188,7 @@ a {
 	font-size: 24pt;
 }
 
-/* Removed some on Accounts page*/
-
 .content {
-	min-height: 400px;
 	padding: 40px;
 	background-color: rgb(229, 236, 241);
 	min-height: 400px;
@@ -213,8 +212,6 @@ a {
 	font-size: 16pt;
 	text-decoration: underline;
 }
-
-/*COLORS*/
 
 .contentContainer {
 	background-color: white;

@@ -69,11 +69,11 @@
 
 	<script>
 		$(function(){
-		$.ajaxSetup({
-		   	headers: {
-		 	     'X-CSRF-TOKEN': '{!! csrf_token() !!}'
-		       }
-		   });
+			$.ajaxSetup({
+			   	headers: {
+			 	    'X-CSRF-TOKEN': '{!! csrf_token() !!}'
+			    }
+		   	});
 		});
 	</script>	
 	<script src="/js/handlebars-v4.0.4.js"></script>
